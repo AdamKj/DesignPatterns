@@ -2,7 +2,7 @@
 
 ### *En klass ska ha en, och bara en, anledning till förändring.*
 
-Varje klass eller metod ansvarar för enbart en sak och ingenting annat.<br/>
+Varje klass eller metod ansvarar för enbart en sak och ingenting annat.  
 Ändrar man något i klassen eller metoden, kommer det bara påverka ett specifikt beteende i applikationen.
 
 #### Exempel
