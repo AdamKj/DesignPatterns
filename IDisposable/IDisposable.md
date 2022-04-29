@@ -17,7 +17,7 @@ För att försäkra oss att vi disposar våran filöppning och minskar risken f�
 kan vi antingen använda oss av ``try/finally`` eller använda oss av ett ``using`` scope.  
 
 #### *try/finally*
-``
+
 public void MyMethod()  
 {  
     var db = new AppDbContext();  
@@ -31,10 +31,10 @@ public void MyMethod()
         System.Console.WriteLine("db always disposed");  
     }  
  }  
-  ``  
+    
     
 #### *using*
-``
+
 public void MyMethod()   
 {  
     using(var db = new AppDbContext())  
@@ -42,4 +42,3 @@ public void MyMethod()
         throw new Exception();  
     } // här kommer vi disposea våran öppning då scopet avslutas  
 }
-``
