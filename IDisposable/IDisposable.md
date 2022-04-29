@@ -34,11 +34,12 @@ public void MyMethod()
  
     
 #### *using*
-
+```cs
 public void MyMethod()   
 {  
-    &nbsp;&nbsp;&nbsp;&nbsp;using(var db = new AppDbContext())  
-    &nbsp;&nbsp;&nbsp;&nbsp;{  
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Exception();  
-    &nbsp;&nbsp;&nbsp;&nbsp;} // här kommer vi disposea våran öppning då scopet avslutas  
+    using(var db = new AppDbContext())  
+    {  
+        throw new Exception();  
+    } // här kommer vi disposea våran öppning då scopet avslutas  
 }
+```
