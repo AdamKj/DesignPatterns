@@ -17,21 +17,21 @@ För att försäkra oss att vi disposar våran filöppning och minskar risken f�
 kan vi antingen använda oss av ``try/finally`` eller använda oss av ett ``using`` scope.  
 
 #### *try/finally*
-
+```cs
 public void MyMethod()  
 {  
-    &nbsp;&nbsp;&nbsp;&nbsp;var db = new AppDbContext();  
-    &nbsp;&nbsp;&nbsp;&nbsp;try // wrappar vår kod som kan orsaka errors  
-    &nbsp;&nbsp;&nbsp;&nbsp;{  
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Exception();  
-    &nbsp;&nbsp;&nbsp;&nbsp;}  
-    &nbsp;&nbsp;&nbsp;&nbsp;finally // kommer alltid utföras oavsett vad som sker i try blocket  
-    &nbsp;&nbsp;&nbsp;&nbsp;{  
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.Dispose();  
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Console.WriteLine("db always disposed");  
-    &nbsp;&nbsp;&nbsp;&nbsp;}  
+    var db = new AppDbContext();  
+    try // wrappar vår kod som kan orsaka errors  
+    {  
+        throw new Exception();  
+    }  
+    finally // kommer alltid utföras oavsett vad som sker i try blocket  
+    {  
+        db.Dispose();  
+        System.Console.WriteLine("db always disposed");  
+    }  
  }  
- 
+ ```
     
 #### *using*
 ```cs
