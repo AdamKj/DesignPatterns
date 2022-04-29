@@ -18,28 +18,28 @@ kan vi antingen använda oss av ``try/finally`` eller använda oss av ett ``usin
 
 #### *try/finally*
 ``
-public void MyMethod()
-{
-    var db = new AppDbContext(); 
-    try // wrappar vår kod som kan orsaka errors
-    {
-        throw new Exception();
-    }
-    finally // kommer alltid utföras oavsett vad som sker i try blocket
-    {
-        db.Dispose();
-        System.Console.WriteLine("db always disposed"); 
-    }
- }
+public void MyMethod()  
+{  
+    var db = new AppDbContext();  
+    try // wrappar vår kod som kan orsaka errors  
+    {  
+        throw new Exception();  
+    }  
+    finally // kommer alltid utföras oavsett vad som sker i try blocket  
+    {  
+        db.Dispose();  
+        System.Console.WriteLine("db always disposed");  
+    }  
+ }  
   ``  
     
 #### *using*
 ``
-public void MyMethod() 
-{
-    using(var db = new AppDbContext())
-    {
-        throw new Exception();
-    } // här kommer vi disposea våran öppning då scopet avslutas
+public void MyMethod()   
+{  
+    using(var db = new AppDbContext())  
+    {  
+        throw new Exception();  
+    } // här kommer vi disposea våran öppning då scopet avslutas  
 }
 ``
