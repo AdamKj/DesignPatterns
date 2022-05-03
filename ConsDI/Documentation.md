@@ -18,4 +18,4 @@ public class MyDependency : IMyDependency
     }
 }
 ```  
-Där våran klass ``MyDependency`` beror av ``IMyDependency`` interfacet och all dess innehåll.
+Där våran klass ``MyDependency`` beror av ``IMyDependency`` interfacet och ärver all dess innehåll.
