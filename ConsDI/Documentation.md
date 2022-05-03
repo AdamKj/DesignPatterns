@@ -18,4 +18,20 @@ public class MyDependency : IMyDependency
     }
 }
 ```  
-Där våran klass ``MyDependency`` beror av ``IMyDependency`` interfacet och implementerar all dess innehåll.
+Där våran klass ``MyDependency`` beror av ``IMyDependency`` interfacet och implementerar all dess innehåll.  
+  
+Ett annat exempel kan vara  
+```cs
+public interface Waiter 
+{
+    string OrderFood(string food);
+}
+
+public class Customer 
+{
+    public string GetFood(Waiter waiter) 
+    {
+        return waiter.OrderFood("hamburger");
+    }
+}
+```
