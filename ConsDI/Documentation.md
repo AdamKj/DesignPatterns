@@ -35,3 +35,10 @@ public class Customer
     }
 }
 ```
+  
+### Skillnad på Scoped, Transient och Singleton?
+``Scoped`` skapar en ny instans för varje HTTP request, men behåller den instansen för varje ny likadan request.  
+  
+``Transient`` skapar en ny instans för varje HTTP request oavsett om den är en likadan request, eller helt ny.  
+  
+``Singleton`` skapar enbart en instans och bibehåller den instansen genom hela applikationen.
