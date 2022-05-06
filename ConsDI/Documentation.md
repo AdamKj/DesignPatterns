@@ -42,3 +42,17 @@ public class Customer
 ``Transient`` skapar en ny instans för varje HTTP request oavsett om den är en likadan request, eller helt ny.  
   
 ``Singleton`` skapar enbart en instans och bibehåller den instansen genom hela applikationen.
+
+### Vad är Service Provider?
+``IServiceProvider`` är ett interface som hämtar/hanterar ett service objekt från en ``ServiceCollection``, som innehåller våra services.  
+
+**Kod exempel**  
+```cs
+using var scope = app.Services.CreateScope();
+var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+```
+  
+**Bild förklaring**  
+*Dependency Resolver = Service Provider*  
+*Blå container = ServiceCollection av våra services*  
+*Ska lägga in en bild här*
