@@ -1,6 +1,6 @@
 ﻿# Dependency Injection
 
-### Hur fungerar Dependency Injection?
+## Hur fungerar Dependency Injection?
 En ``Dependency`` är ett beroende av någonting. Alltså är ``Dependency Injection`` i princip att förse alla de objekt som ett annat objekt behöver, dess beroenden.  
   
 Te x. 
@@ -36,14 +36,14 @@ public class Customer
 }
 ```
   
-### Skillnad på Scoped, Transient och Singleton?
+## Skillnad på Scoped, Transient och Singleton?
 ``Scoped`` skapar en ny instans för varje HTTP request, men behåller den instansen för varje ny likadan request.  
   
 ``Transient`` skapar en ny instans för varje HTTP request oavsett om den är en likadan request, eller helt ny.  
   
 ``Singleton`` skapar enbart en instans och bibehåller den instansen genom hela applikationen.
 
-### Vad är Service Provider?
+## Vad är Service Provider?
 ``IServiceProvider`` är ett interface som hämtar/hanterar ett service objekt från en ``ServiceCollection``, som innehåller våra services.  
 
 **Kod exempel**  
@@ -55,4 +55,4 @@ var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 **Bild förklaring**  
 *Dependency Resolver = Service Provider*  
 *Blå container = ServiceCollection av våra services*  
-*Ska lägga in en bild här*
+![Dependency-Injection-ASP NET-Core](https://user-images.githubusercontent.com/76393729/167145712-50cf8ba3-2c3f-426f-b061-c709f3cb75d5.png)
