@@ -6,6 +6,9 @@ using Microsoft.Extensions.Logging;
 var serviceProvider = ConfigureServices().BuildServiceProvider();
 serviceProvider.GetRequiredService<GetServiceProviderExample>().Run();
 
+using var scope = serviceProvider.CreateScope();
+scope.ServiceProvider.GetRequiredService<GetServiceProviderExample>().Run();
+
 IServiceCollection ConfigureServices()
 {
     var services = new ServiceCollection();
