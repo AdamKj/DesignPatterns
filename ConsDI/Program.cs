@@ -12,14 +12,30 @@ serviceProvider.GetRequiredService<SingletonService>().Run();
 
 IServiceCollection ConfigureServices()
 {
+    var config = ConfigureBuild();
     var services = new ServiceCollection();
-    services.AddLogging(opt => opt.AddConsole());
+    services.AddLogging(opt =>
+    {
+        opt.AddConsole();
+    });
+
+    services.AddDbContext(opt => opt.ConnectionString =  "hello"/*config.GetConnectionString("DefaultConnection")*/);
+
     services.AddTransient<GetServiceProviderExample>();
     services.AddScoped<ScopedService>();
     services.AddSingleton<SingletonService>();
 
-    var config = ConfigureBuild();
+    ////services.Configure<TokenOptions>(config.GetSection(TokenOptions.SectionName));
+    //var apiSection = config.GetSection(ApiUrls.SectionName);
 
+    //var tokenSection = config.GetSection(TokenOptions.SectionName);
+    //var tokenOptions = tokenSection.Get<TokenOptions>();
+    //services.Configure<TokenOptions>(tokenSection);
+    //var apiUrls = apiSection.Get<ApiUrls>();
+    //Console.WriteLine(apiUrls.FrolundaApi);
+
+    //services.AddScoped(sp => new HttpClient() { BaseAddress = new Uri(apiUrls.FrolundaApi) });
+    //services.AddScoped(sp => new HttpClient() { BaseAddress = new Uri(apiUrls.FrolundaApiV2) });
     return services;
 }
 
