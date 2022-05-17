@@ -41,7 +41,7 @@ public class Customer
   
 ``Transient`` skapar en ny instans för varje HTTP request oavsett om den är en likadan request, eller helt ny.  
   
-``Singleton`` skapar enbart en instans och bibehåller den instansen genom hela applikationen.
+``Singleton`` skapar enbart en instans av Servicen och bibehåller den instansen genom hela applikationen.
 
 ## Vad är Service Provider?
 ``IServiceProvider`` är ett interface som hämtar/hanterar ett service objekt från en ``ServiceCollection``, som innehåller våra services.  
