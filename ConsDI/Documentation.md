@@ -56,3 +56,8 @@ var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 *Dependency Resolver = Service Provider*  
 *Blå container = ServiceCollection av våra services*  
 ![Dependency-Injection-ASP NET-Core](https://user-images.githubusercontent.com/76393729/167145712-50cf8ba3-2c3f-426f-b061-c709f3cb75d5.png)
+
+
+## Varför används ett Scoped Service?
+Det används för att kunna hämta ut Services ur Service Containern  
+så de sedan kan Disposas automatiskt, för att förhindra memory leaks.
